@@ -63,9 +63,9 @@ void setup(void) {
 void loop(void) {
 	WriteAD9833(TRIANGULAR_WAVE);
 
-  for (unsigned int i = 0; i < N; ++i) {    // Get samples for smooth the value
-    vOut = vOut + analogRead(outPin);
-    delay(1);                               // delay in between reads for stability
+	for (unsigned int i = 0; i < N; ++i) {    // Get samples for smooth the value
+		vOut = vOut + analogRead(outPin);
+		delay(1);                               // delay in between reads for stability
   }
 	vOut = (vOut * vConv) / N;                // ADC of voltage meter output voltage
 
