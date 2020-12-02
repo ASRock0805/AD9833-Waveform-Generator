@@ -38,12 +38,12 @@ void loop(void);
 
 /*--- Functions Definition ---*/
 void WriteAD9833(uint16_t Data) {
-    SPI.beginTransaction(SPISettings(SPI_CLOCK_DIV2, MSBFIRST, SPI_MODE2));
-    digitalWrite(SS, LOW);
-    delayMicroseconds(1);
-    SPI.transfer16(Data);
-    digitalWrite(SS, HIGH);
-    SPI.endTransaction();
+  SPI.beginTransaction(SPISettings(SPI_CLOCK_DIV2, MSBFIRST, SPI_MODE2));
+  digitalWrite(SS, LOW);
+  delayMicroseconds(1);
+  SPI.transfer16(Data);
+  digitalWrite(SS, HIGH);
+  SPI.endTransaction();
 }
 
 /*--- Initialization ---*/
